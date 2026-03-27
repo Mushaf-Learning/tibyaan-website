@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Tibyaan</title>
+<meta name="description" content="Tibyaan Privacy Policy — how we collect, use, and protect your information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C8A96E;
+    --gold-dark: #8B6914;
+    --ink: #0C0D10;
+    --cream: #F7F3EC;
+    --cream-dark: #EDE6D8;
+    --muted: #8A8778;
+    --text: #2C2A24;
+    --border: rgba(139, 105, 20, 0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(247, 243, 236, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .nav-brand-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-brand-ar {
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    color: var(--gold-dark);
+    margin-left: 0.25rem;
+  }
+
+  .nav-back {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--gold-dark); }
+
+  /* HEADER */
+  .policy-header {
+    padding: 10rem 4rem 4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .policy-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .policy-label::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: var(--gold);
+    opacity: 0.3;
+  }
+
+  .policy-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .policy-meta {
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  .policy-meta span {
+    color: var(--gold-dark);
+    margin-left: 0.5rem;
+  }
+
+  /* CONTENT */
+  .policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem;
+  }
+
+  .policy-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .policy-section {
+    margin-bottom: 3rem;
+  }
+
+  .policy-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gold-dark);
+    opacity: 0.6;
+    min-width: 1.5rem;
+  }
+
+  .policy-section p {
+    font-size: 0.925rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #4A4840;
+    margin-bottom: 1rem;
+  }
+
+  .policy-section ul {
+    margin: 0.75rem 0 1rem 1.5rem;
+    list-style: none;
+  }
+
+  .policy-section ul li {
+    font-size: 0.925rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: #4A4840;
+    margin-bottom: 0.4rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .policy-section ul li::before {
+    content: '—';
+    position: absolute;
+    left: -0.5rem;
+    color: var(--gold-dark);
+    opacity: 0.5;
+    font-size: 0.8rem;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.3;
+    margin: 2.5rem 0;
+  }
+
+  .highlight-box {
+    background: var(--cream-dark);
+    border-left: 2px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .highlight-box p {
+    margin-bottom: 0 !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* CONTACT BAND */
+  .contact-band {
+    background: var(--ink);
+    padding: 4rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .contact-band h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-band p {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgba(247, 243, 236, 0.5);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-band a {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .contact-band a:hover {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(200, 169, 110, 0.1);
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--gold);
+  }
+
+  .footer-brand span {
+    font-family: 'Amiri', serif;
+    margin-left: 0.4rem;
+    opacity: 0.7;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(247, 243, 236, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .policy-header { padding: 8rem 1.5rem 3rem; }
+    .policy-content { padding: 3rem 1.5rem; }
+    .contact-band { padding: 3rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <div class="nav-logo-mark">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2L12.5 7H17.5L13.5 10.5L15 15.5L10 12.5L5 15.5L6.5 10.5L2.5 7H7.5L10 2Z" stroke="#C8A96E" stroke-width="1.2" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="nav-brand-text">Tibyaan <span class="nav-brand-ar">تبيان</span></span>
+  </a>
+  <a class="nav-back" href="index.html">← Back to Home</a>
+</nav>
+
+<!-- HEADER -->
+<div class="policy-header">
+  <p class="policy-label">Legal</p>
+  <h1 class="policy-title">Privacy Policy</h1>
+  <p class="policy-meta">Last updated <span>March 26, 2026</span></p>
+</div>
+
+<!-- CONTENT -->
+<div class="policy-content">
+
+  <p class="policy-intro">
+    Tibyaan is built on the belief that access to the Quran should be open, trusted, and free from misuse of personal data. This Privacy Policy explains clearly and honestly how we handle your information.
+  </p>
+
+  <div class="policy-section">
+    <h2><span class="section-num">01</span> Who We Are</h2>
+    <p>Tibyaan is operated by <strong>Tibyaan LLC</strong>, a Wyoming limited liability company. Our apps include Tibyaan Quran, Tibyaan Salah, and Tibyaan Masjid.</p>
+    <p>If you have any questions about this policy, you can contact us at <a href="mailto:privacy@tibyaan.ai" style="color: var(--gold-dark);">privacy@tibyaan.ai</a>.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">02</span> Information We Collect</h2>
+    <p>We collect only what is necessary to provide our services. Depending on which app you use, this may include:</p>
+    <ul>
+      <li><strong>Location data</strong> — used only to calculate accurate prayer times and Qibla direction. This is processed on-device and never stored on our servers unless you explicitly save a location.</li>
+      <li><strong>Device information</strong> — basic device type, operating system, and app version for crash reporting and compatibility.</li>
+      <li><strong>Usage analytics</strong> — anonymized, aggregated data about which features are used. No personally identifiable information is included.</li>
+      <li><strong>Account information</strong> — if you create an account, we collect your email address and a display name. Passwords are hashed and never stored in plain text.</li>
+      <li><strong>Reading progress and bookmarks</strong> — stored locally on your device by default. If you enable sync, this data is stored securely on our servers tied to your account.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">03</span> Information We Do Not Collect</h2>
+    <div class="highlight-box">
+      <p>Tibyaan does not sell, rent, or share your personal information with third parties for advertising or marketing purposes — ever.</p>
+    </div>
+    <p>We do not collect:</p>
+    <ul>
+      <li>Your name, phone number, or physical address (unless you provide them voluntarily for support)</li>
+      <li>Payment information — all in-app purchases are processed directly by Apple or Google</li>
+      <li>Audio recordings of your recitation beyond what is needed for real-time AI feedback, which is processed and immediately discarded</li>
+      <li>Contacts, photos, or any data unrelated to the app's function</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">04</span> How We Use Your Information</h2>
+    <p>We use the information we collect for the following purposes:</p>
+    <ul>
+      <li>To provide accurate prayer times based on your location</li>
+      <li>To sync your reading progress and bookmarks across devices (if enabled)</li>
+      <li>To improve app stability and performance through anonymized crash reports</li>
+      <li>To respond to support requests you send us</li>
+      <li>To send important service notifications (not marketing emails)</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">05</span> AI Features & Data</h2>
+    <p>Tibyaan uses artificial intelligence for features such as tajweed feedback, word-by-word analysis, and recitation assistance. Here is how your data is handled in these features:</p>
+    <ul>
+      <li>Tajweed and translation features operate using pre-loaded data and do not require sending your data to external servers</li>
+      <li>Recitation analysis processes your audio locally on-device where possible. When server-side processing is required, audio is transmitted securely, processed, and immediately deleted — it is never stored or used for training</li>
+      <li>AI-generated explanations and queries you submit are processed by our AI provider under strict data processing agreements that prohibit training on your data</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">06</span> Data Sharing</h2>
+    <p>We share your data only in the following limited circumstances:</p>
+    <ul>
+      <li><strong>Service providers</strong> — we use trusted third-party services for hosting, analytics, and crash reporting. These providers are contractually bound to handle data securely and only as directed by us.</li>
+      <li><strong>App stores</strong> — Apple and Google process payments and may collect their own data per their privacy policies.</li>
+      <li><strong>Legal requirements</strong> — we may disclose information if required by law, court order, or to protect the rights and safety of our users.</li>
+    </ul>
+    <p>We do not share data with advertisers, data brokers, or any party for commercial purposes.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">07</span> Your Data Lives in Your Storage — Not Ours</h2>
+    <div class="highlight-box">
+      <p>Tibyaan does not store your personal reading data, bookmarks, notes, or progress on our servers — not even when you sync across devices. Your data is stored exclusively in your own personal cloud storage account.</p>
+    </div>
+    <p>When you enable sync, Tibyaan writes your data directly to whichever personal cloud storage you choose:</p>
+    <ul>
+      <li><strong>iCloud</strong> — via Apple's CloudKit, governed by Apple's Privacy Policy</li>
+      <li><strong>Google Drive</strong> — stored in your personal Google Drive, governed by Google's Privacy Policy</li>
+      <li><strong>Box</strong> — stored in your personal or organizational Box account, governed by Box's Privacy Policy</li>
+    </ul>
+    <p>Tibyaan acts only as a bridge to write and read from your chosen storage. We never have access to your storage credentials, and your data never passes through or rests on Tibyaan servers. You own your data completely — delete your storage files at any time to remove it entirely.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">08</span> Data Retention</h2>
+    <p>Because your personal data is stored in your own cloud storage, you are in full control of retention. For the limited data Tibyaan does hold:</p>
+    <ul>
+      <li>Account data (email, display name) is retained until you delete your account</li>
+      <li>Anonymized analytics are retained for up to 24 months</li>
+      <li>Support correspondence is retained for 12 months after resolution</li>
+      <li>Upon account deletion, your account data is permanently removed within 30 days</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">09</span> Your Rights</h2>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong>Access</strong> — request a copy of the data we hold about you</li>
+      <li><strong>Correction</strong> — request that we correct inaccurate data</li>
+      <li><strong>Deletion</strong> — request that we delete your data</li>
+      <li><strong>Portability</strong> — request your data in a machine-readable format</li>
+      <li><strong>Opt-out</strong> — opt out of any optional data collection at any time through the app settings</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:privacy@tibyaan.ai" style="color: var(--gold-dark);">privacy@tibyaan.ai</a>.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">10</span> Global Privacy Compliance</h2>
+    <p>Tibyaan is committed to compliance with privacy laws across all jurisdictions where our apps are available. We adhere to the following frameworks:</p>
+
+    <p><strong>GDPR — European Union & United Kingdom</strong></p>
+    <ul>
+      <li>We process personal data only on lawful bases: consent, legitimate interest, or contractual necessity</li>
+      <li>EU/UK users have the right to access, rectify, erase, restrict, and port their data</li>
+      <li>You have the right to object to processing and to lodge a complaint with your local supervisory authority</li>
+      <li>We do not transfer personal data outside the EEA without appropriate safeguards (Standard Contractual Clauses or equivalent)</li>
+      <li>Our Data Protection contact is <a href="mailto:privacy@tibyaan.ai" style="color: var(--gold-dark);">privacy@tibyaan.ai</a></li>
+    </ul>
+
+    <p style="margin-top: 1rem;"><strong>CCPA / CPRA — California, USA</strong></p>
+    <ul>
+      <li>California residents have the right to know what personal information is collected, used, shared, or sold</li>
+      <li>We do not sell personal information — California residents can confirm this at any time by contacting us</li>
+      <li>California residents have the right to delete their personal information and to non-discrimination for exercising their rights</li>
+    </ul>
+
+    <p style="margin-top: 1rem;"><strong>PIPEDA — Canada</strong></p>
+    <ul>
+      <li>We collect, use, and disclose personal information only with consent and for purposes a reasonable person would consider appropriate</li>
+      <li>Canadian users may access and correct their personal information by contacting us</li>
+    </ul>
+
+    <p style="margin-top: 1rem;"><strong>PDPA — Various Countries</strong></p>
+    <ul>
+      <li>We respect Personal Data Protection Acts applicable in countries including Thailand, Singapore, Malaysia, and others</li>
+      <li>Users in these jurisdictions have equivalent rights to access, correct, and withdraw consent for data processing</li>
+    </ul>
+
+    <div class="highlight-box" style="margin-top: 1.25rem;">
+      <p>Because Tibyaan stores your personal data in your own cloud storage (iCloud, Google Drive, or Box) rather than on our servers, your data is also governed by the privacy framework of your chosen storage provider — giving you an additional layer of protection under their policies.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">11</span> Children's Privacy & All-Ages Design</h2>
+
+    <div class="highlight-box">
+      <p>Tibyaan is designed to be safe, appropriate, and welcoming for users of all ages — from young children learning to read the Quran to elderly users. Our apps carry an age rating of <strong>4+</strong> on the Apple App Store and <strong>Everyone</strong> on Google Play.</p>
+    </div>
+
+    <p>We have designed Tibyaan from the ground up to meet the highest standards for children's safety and privacy, in compliance with:</p>
+    <ul>
+      <li><strong>COPPA</strong> (Children's Online Privacy Protection Act, USA) — for users under 13</li>
+      <li><strong>GDPR Article 8</strong> (EU) — for users under 16 in the European Union</li>
+      <li><strong>Apple App Store Children's Guidelines</strong></li>
+      <li><strong>Google Play Families Policy</strong></li>
+    </ul>
+
+    <p style="margin-top: 1rem;"><strong>What makes Tibyaan safe for all ages:</strong></p>
+    <ul>
+      <li>The app contains exclusively Quranic content — no violent, adult, frightening, or inappropriate material of any kind</li>
+      <li>No social features — users cannot communicate with strangers, share public profiles, or interact with other users</li>
+      <li>No behavioral advertising — we do not serve ads of any kind to any user, including children</li>
+      <li>No interest-based tracking — we do not build profiles on children or any user for commercial purposes</li>
+      <li>No third-party advertising SDKs or analytics SDKs that target children</li>
+      <li>In-app purchases, if any, require parental authorization through the device's built-in controls (Apple Screen Time / Google Family Link)</li>
+      <li>All AI features (tajweed feedback, word analysis) operate locally on-device where possible and do not expose children's data externally</li>
+      <li>No account is required to use the core features — children can use Tibyaan without providing any personal information</li>
+    </ul>
+
+    <p style="margin-top: 1rem;"><strong>For parents and guardians:</strong></p>
+    <ul>
+      <li>Tibyaan does not require children to create an account or provide personal information to read the Quran</li>
+      <li>If a child creates an optional account, we collect only an email address and display name — with parental consent required for users under 13 in the USA and under 16 in the EU</li>
+      <li>Parents may request deletion of any data associated with their child's account by contacting <a href="mailto:privacy@tibyaan.ai" style="color: var(--gold-dark);">privacy@tibyaan.ai</a></li>
+      <li>All data is stored in the child's own cloud storage (iCloud, Google Drive, or Box) — Tibyaan never holds children's personal data on its own servers</li>
+    </ul>
+
+    <p style="margin-top: 1rem;">We are committed to maintaining the 4+ / Everyone rating permanently. Any future features are reviewed against children's safety standards before release.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">12</span> Security</h2>
+    <p>We take the security of your data seriously. We use industry-standard measures including:</p>
+    <ul>
+      <li>HTTPS/TLS encryption for all data in transit</li>
+      <li>Encrypted storage for all data at rest</li>
+      <li>Regular security reviews and vulnerability assessments</li>
+      <li>Strict access controls — only authorized personnel can access user data</li>
+    </ul>
+    <p>No system is completely secure. If you believe your data has been compromised, please contact us immediately at <a href="mailto:support@tibyaan.ai" style="color: var(--gold-dark);">support@tibyaan.ai</a>.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">13</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the app or by email. The date at the top of this page always reflects the most recent update.</p>
+    <p>Continued use of Tibyaan after changes are posted constitutes your acceptance of the updated policy.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="policy-section">
+    <h2><span class="section-num">14</span> Governing Law</h2>
+    <p>This Privacy Policy is governed by the laws of the State of Wyoming, United States. Any disputes arising from this policy shall be resolved in the courts of Wyoming.</p>
+  </div>
+
+</div>
+
+<!-- CONTACT BAND -->
+<div class="contact-band">
+  <h3>Questions about your privacy?</h3>
+  <p>We're committed to transparency. Reach out and we'll respond within 48 hours.</p>
+  <a href="mailto:privacy@tibyaan.ai">privacy@tibyaan.ai</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    Tibyaan <span>تبيان</span>
+  </div>
+  <p class="footer-copy">© 2026 Tibyaan LLC · Wyoming, USA · <a href="index.html" style="color: rgba(247,243,236,0.3); text-decoration: none;">Home</a></p>
+</footer>
+
+</body>
+</html>

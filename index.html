@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tibyaan — A Clarification for All Things</title>
+<meta name="description" content="Tibyaan brings the Quran to everyone — 140+ translations, tajweed annotations, word-by-word morphology, and AI-powered features. A clarification for all things.">
+<meta property="og:title" content="Tibyaan تبيان">
+<meta property="og:description" content="A Clarification for All Things — Quran 16:89">
+<meta property="og:url" content="https://tibyaan.ai">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C8A96E;
+    --gold-light: #E8D0A0;
+    --gold-dark: #8B6914;
+    --ink: #0C0D10;
+    --ink-mid: #1A1C22;
+    --ink-soft: #2A2D36;
+    --cream: #F7F3EC;
+    --cream-dark: #EDE6D8;
+    --muted: #8A8778;
+    --text: #2C2A24;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 4rem;
+    background: rgba(247, 243, 236, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(200, 169, 110, 0.2);
+  }
+
+  .nav-brand {
+    display: flex; align-items: center; gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .nav-logo-mark svg { width: 20px; height: 20px; }
+
+  .nav-brand-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-brand-ar {
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    color: var(--gold-dark);
+    margin-left: 0.25rem;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex; gap: 2.5rem;
+  }
+
+  nav ul a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--gold-dark); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--cream-dark);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%238B6914' stroke-width='0.5'%3E%3Crect x='10' y='10' width='60' height='60' transform='rotate(45 40 40)'/%3E%3Crect x='20' y='20' width='40' height='40'/%3E%3Ccircle cx='40' cy='40' r='30'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-ornament {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--gold-dark), transparent);
+    margin: 0 auto 2.5rem;
+  }
+
+  .hero-arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--gold-dark);
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    color: var(--ink);
+    letter-spacing: 0.08em;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title span {
+    font-style: italic;
+    color: var(--gold-dark);
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-source {
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    opacity: 0.8;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid var(--gold-dark);
+    color: var(--gold-dark);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .hero-cta:hover {
+    background: var(--gold-dark);
+    color: var(--cream);
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  .hero-scroll span {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(139, 105, 20, 0.5);
+  }
+
+  .hero-scroll-line {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--gold-dark), transparent);
+    opacity: 0.5;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── MISSION ── */
+  .mission {
+    padding: 8rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 2rem;
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
+  }
+
+  .section-label::before,
+  .section-label::after {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  .mission-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-bottom: 2rem;
+  }
+
+  .mission-body {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--muted);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  /* ── APPS ── */
+  .apps {
+    padding: 6rem 4rem;
+    background: var(--ink-mid);
+  }
+
+  .apps-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .apps-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .apps-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    color: var(--cream);
+    margin-top: 1rem;
+  }
+
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5px;
+    background: rgba(200, 169, 110, 0.15);
+  }
+
+  .app-card {
+    background: var(--ink-mid);
+    padding: 3rem 2.5rem;
+    transition: background 0.3s;
+  }
+
+  .app-card:hover { background: var(--ink-soft); }
+
+  .app-icon {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(200, 169, 110, 0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .app-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+  .app-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .app-name-ar {
+    font-family: 'Amiri', serif;
+    font-size: 0.9rem;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .app-desc {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(247, 243, 236, 0.45);
+  }
+
+  .app-tag {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid rgba(200, 169, 110, 0.3);
+    padding-bottom: 2px;
+  }
+
+  /* ── FEATURES ── */
+  .features {
+    padding: 8rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem 4rem;
+  }
+
+  .feature {
+    display: flex; gap: 1.25rem;
+  }
+
+  .feature-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gold);
+    opacity: 0.35;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+
+  .feature-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-body {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  /* ── VERSE BAND ── */
+  .verse-band {
+    padding: 6rem 4rem;
+    background: var(--ink);
+    text-align: center;
+    position: relative;
+  }
+
+  .verse-band-ornament {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1.5rem; margin-bottom: 3rem;
+  }
+
+  .ornament-line { width: 80px; height: 1px; background: rgba(200, 169, 110, 0.3); }
+
+  .ornament-diamond {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    opacity: 0.6;
+  }
+
+  .verse-arabic {
+    font-family: 'Amiri', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--gold);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    direction: rtl;
+  }
+
+  .verse-english {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    color: rgba(247, 243, 236, 0.7);
+    margin-bottom: 0.75rem;
+  }
+
+  .verse-ref {
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(200, 169, 110, 0.5);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(200, 169, 110, 0.1);
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+  }
+
+  .footer-brand span {
+    font-family: 'Amiri', serif;
+    margin-left: 0.5rem;
+    opacity: 0.7;
+  }
+
+  .footer-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247, 243, 236, 0.35);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(247, 243, 236, 0.2);
+  }
+
+  /* ── COMING SOON BADGE ── */
+  .badge-coming {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(200, 169, 110, 0.1);
+    color: var(--gold);
+    border: 1px solid rgba(200, 169, 110, 0.2);
+    padding: 3px 10px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    .mission, .features { padding: 5rem 1.5rem; }
+    .apps { padding: 5rem 1.5rem; }
+    .verse-band { padding: 5rem 1.5rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero > * {
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .hero > *:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+  .hero > *:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
+  .hero > *:nth-child(3) { animation-delay: 0.35s; opacity: 0; }
+  .hero > *:nth-child(4) { animation-delay: 0.45s; opacity: 0; }
+  .hero > *:nth-child(5) { animation-delay: 0.55s; opacity: 0; }
+  .hero > *:nth-child(6) { animation-delay: 0.65s; opacity: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2L12.5 7H17.5L13.5 10.5L15 15.5L10 12.5L5 15.5L6.5 10.5L2.5 7H7.5L10 2Z" stroke="#C8A96E" stroke-width="1.2" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="nav-brand-text">Tibyaan <span class="nav-brand-ar">تبيان</span></span>
+  </a>
+  <ul>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#apps">Apps</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="mailto:hello@tibyaan.ai">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-ornament"></div>
+  <p class="hero-arabic">تِبْيَاناً لِكُلِّ شَيْءٍ</p>
+  <h1 class="hero-title">Tib<span>yaan</span></h1>
+  <p class="hero-tagline">"A Clarification for All Things"</p>
+  <p class="hero-source">— Quran, An-Nahl 16:89</p>
+  <a class="hero-cta" href="#apps">Explore Our Apps</a>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission" id="mission">
+  <p class="section-label">Our Mission</p>
+  <h2 class="mission-title">The Quran is the final scripture<br>for all of humanity</h2>
+  <p class="mission-body">
+    Tibyaan exists to make the words of the Quran accessible, clear, and meaningful to every person on earth — Muslim and non-Muslim alike. Through 140+ translations, AI-powered features, and beautifully designed apps, we bring the final divine message to every screen, every language, every heart.
+  </p>
+</section>
+
+<!-- APPS -->
+<section class="apps" id="apps">
+  <div class="apps-inner">
+    <div class="apps-header">
+      <p class="section-label" style="color: rgba(200, 169, 110, 0.6);">The Suite</p>
+      <h2 class="apps-title">Four apps. One mission.</h2>
+    </div>
+    <div class="apps-grid">
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h3 class="app-name">Tibyaan Quran</h3>
+        <span class="app-name-ar">القرآن الكريم</span>
+        <p class="app-desc">The complete Quran with 140+ translations in 50+ languages, character-level tajweed annotations, word-by-word morphology, 79+ reciters, and AI-powered features for deeper understanding.</p>
+        <span class="app-tag">Coming Soon</span>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3 class="app-name">Tibyaan Salah</h3>
+        <span class="app-name-ar">أوقات الصلاة</span>
+        <p class="app-desc">Precise, GPS-based prayer times for individuals. Beautiful adhan notifications, Qibla compass, and a clean interface designed for daily use — wherever you are in the world.</p>
+        <span class="app-tag">Coming Soon</span>
+      </div>
+
+      <div class="app-card">
+        <div class="app-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="app-name">Tibyaan Masjid</h3>
+        <span class="app-name-ar">شاشة المسجد</span>
+        <p class="app-desc">A native TV app for Samsung and LG smart TVs. Display prayer times, Quran verses, and community announcements on your masjid screens — no special hardware required.</p>
+        <span class="app-tag">Coming Soon</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="features-header">
+    <p class="section-label">Why Tibyaan</p>
+    <h2 class="mission-title" style="margin: 0;">Built different, for everyone</h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature">
+      <span class="feature-num">01</span>
+      <div>
+        <h4 class="feature-title">140+ Translations</h4>
+        <p class="feature-body">The Quran in over 50 languages — from Classical Arabic to Swahili — making the final scripture accessible to every human being on earth.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <span class="feature-num">02</span>
+      <div>
+        <h4 class="feature-title">AI-Powered Understanding</h4>
+        <p class="feature-body">Word-by-word morphology, grammatical analysis, and AI features that help you understand not just what the Quran says — but how it says it.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <span class="feature-num">03</span>
+      <div>
+        <h4 class="feature-title">Tajweed Annotations</h4>
+        <p class="feature-body">Character-level tajweed color mapping for every ayah — helping learners recite with confidence and precision.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <span class="feature-num">04</span>
+      <div>
+        <h4 class="feature-title">No Hardware Required</h4>
+        <p class="feature-body">Tibyaan Masjid runs natively on Samsung and LG smart TVs your mosque already owns. No kiosks. No proprietary devices. No vendor lock-in.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <span class="feature-num">05</span>
+      <div>
+        <h4 class="feature-title">Sect-Neutral & Inclusive</h4>
+        <p class="feature-body">Designed for all Muslims and open to all people. No scholarly affiliation, no denominational bias — just the words of the Quran, clearly presented.</p>
+      </div>
+    </div>
+    <div class="feature">
+      <span class="feature-num">06</span>
+      <div>
+        <h4 class="feature-title">Open Data Foundation</h4>
+        <p class="feature-body">Built on MIT-licensed Quran data — text, translations, tajweed, audio — freely available to developers worldwide at Mushaf Learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERSE BAND -->
+<section class="verse-band">
+  <div class="verse-band-ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-diamond"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <p class="verse-arabic">وَنَزَّلْنَا عَلَيْكَ الْكِتَابَ تِبْيَاناً لِّكُلِّ شَيْءٍ</p>
+  <p class="verse-english">"And We have sent down to you the Book as a clarification for all things"</p>
+  <p class="verse-ref">Quran · An-Nahl · 16:89</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    Tibyaan <span>تبيان</span>
+  </div>
+  <ul class="footer-links">
+    <li><a href="mailto:hello@tibyaan.ai">hello@tibyaan.ai</a></li>
+    <li><a href="mailto:support@tibyaan.ai">Support</a></li>
+    <li><a href="https://github.com/Mushaf-Learning">GitHub</a></li>
+    <li><a href="/privacy">Privacy</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Tibyaan LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
